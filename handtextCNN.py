@@ -42,11 +42,12 @@ def baseline_model():
 	model = Sequential()
 	model.add(Convolution2D(32, 1, 1, border_mode='valid', input_shape=(1, 1, 16), activation='relu'))
 	model.add(MaxPooling2D(pool_size=(1, 1)))
-	model.add(Dropout(0.2))
-	model.add(Flatten())
+	model.add(Dropout(0.2)) #why 0.2
+	model.add(Flatten()) #explaination?
 	model.add(Dense(128, activation='relu'))
 	model.add(Dense(num_classes, activation='softmax'))
 	# compile 
+	#where did you do bootstrapping?
 	model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 	return model
 
