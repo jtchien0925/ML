@@ -49,7 +49,6 @@ def baseline_model():
 	model.add(Dense(128, activation='relu'))
 	model.add(Dense(num_classes, activation='softmax'))
 	# compile 
-	#where did you do bootstrapping?
 	model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 	return model
 
